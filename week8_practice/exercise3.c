@@ -1,0 +1,22 @@
+#include <unistd.h>
+#include <stdio.h>
+#include <sys/types.h>
+void folklore() 
+{
+	int queue=15, stack=25, map=25, tree=10,x,k;
+	x=((stack<=map))&&((tree>queue));
+	k=((map==queue))||((stack>tree));
+	//child process because return value zero
+	if (fork() == 0)
+		printf("xProcess = %d\n", x);
+		
+	// parent process because return value non-zero
+	else
+		printf("kProcess = %d\n", ++k)
+		
+}
+int main()
+{
+	folklore();
+	return 0;
+}
